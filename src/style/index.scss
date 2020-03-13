@@ -1,0 +1,118 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 1280px;
+}
+
+.el-header, .el-footer {
+  // background-color: #B3C0D1;
+  // background-color: #9dc1f1;
+  background-color: #e4e4e4;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-aside {
+  // background-color: #D3DCE6;
+  background-color: #545C64;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-main {
+  color: #333;
+  // text-align: center;
+  // line-height: 160px;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+  height: 100%;
+}
+
+.el-container {
+  height: 100%;
+  .is-vertical {
+    background: #f5f3f3;
+  }
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+
+.el-menu {
+  border-right: 0px;
+  li {
+    text-align: left;
+  }
+}
+// 菜单样式
+// .is-opened .el-submenu__title {
+//   border-bottom: 1px solid #707277;
+// }
+// .el-submenu.is-active .el-submenu__title {
+//   border-bottom-color: #707277;
+// }
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
+
+
+.el-carousel__container {
+  height: 600px;
+}
+
+/* Dialog  */
+.el-dialog__body {
+  border-top: 1px solid #e5ecef;
+  border-bottom: 1px solid #e5ecef;
+}
+
+/* breadcrumb */
+.el-breadcrumb {
+  display: inline-block;
+  margin-left: 24px;
+}
+
+.el-dropdown {
+  display: inline-block;
+  position: relative;
+  color: #666;
+  font-size: 14px;
+}
