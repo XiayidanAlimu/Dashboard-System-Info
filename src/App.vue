@@ -6,9 +6,7 @@
           <side-menu ref="menu" :collapse="collapse"></side-menu>
         </el-aside>
         <el-container>
-          <el-header>
-            <Header :collapse="collapse" @change="change"></Header>
-          </el-header>
+         
           <el-main>
             <router-view :key="new Date().getTime()"></router-view>
           </el-main>
@@ -24,13 +22,14 @@
 <script>
 import './style/index.scss';
 import SideMenu from './components/menu';
-import Header from './components/header.vue';
+// import Header from './components/header.vue';
 
 export default {
   name: 'app',
   components: {
-    SideMenu,
-    Header
+    SideMenu
+    // ,
+    // Header
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="@/assets/fast.gif" />
+    <router-view></router-view>
   </div>
 </template>
 

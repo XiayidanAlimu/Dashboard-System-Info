@@ -1,74 +1,33 @@
-import Dashbord from '@/view/dashbord/index.vue';
-import IMGS from '@/view/img/index.vue';
-import Balloon from '@/view/img/balloon.vue';
-import Carsule from '@/view/img/carsule.vue';
-import Rabbit from '@/view/img/rabbit.vue';
-import Test from '@/view/test/index.vue';
+import Load from '@/view/dashbord/index.vue';
+import TimeLine from '@/view/dashbord/timeLine.vue';
+import Gauge from '@/view/dashbord/gauge.vue';
 
 const Router = [{
   path: '/',
-  name: 'dashbord',
-  component: Dashbord,
+  name: "Dashbord",
   meta: {
-    title: 'Dashbord',
+    title: "CPU Load Dashbord",
     icon: 'el-icon-s-help'
-  }
-}, {
-  path: '/imgs',
-  name: 'imgs',
-  meta: {
-    title: 'IMGS',
-    icon: 'el-icon-camera'
   },
-  component: IMGS,
+  component: Load,
   redirect: {
-    name: 'balloon',
+    name: 'timeLine',
   },
   children: [{
-    path: '/imgs/balloon',
-    name: 'balloon',
-    component: Balloon,
+    path: '/imgs/gauge',
+    name: 'gauge',
+    component: Gauge,
     meta: {
-      title: 'Ballon'
+      title: 'Current'
     }
   }, {
-    path: '/imgs/carsule',
-    name: 'carsule',
-    component: Carsule,
+    path: '/si/timeLine',
+    name: 'timeline',
+    component: TimeLine,
     meta: {
-      title: 'Carsule'
-    }
-  }, {
-    path: '/imgs/rabbit',
-    name: 'rabbit',
-    component: Rabbit,
-    meta: {
-      title: 'Rabbit'
+      title: 'Time Series Data'
     }
   }]
-}, {
-  path: '/signal',
-  name: 'signal',
-  component: IMGS,
-  meta: {
-    title: 'Signale',
-    icon: 'el-icon-attract'
-  },
-}, {
-  path: '/imgs/img-3',
-  name: 'img-3',
-  component: Carsule,
-  meta: {
-    title: 'IMG3'
-  }
-}, {
-  path: '/list',
-  name: 'test',
-  component: Test,
-  meta: {
-    title: 'Test',
-    icon: 'el-icon-news'
-  }
 }];
 
 export default Router;
