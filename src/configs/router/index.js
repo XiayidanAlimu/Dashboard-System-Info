@@ -1,6 +1,6 @@
-import Load from '@/view/dashbord/index.vue';
-import TimeLine from '@/view/dashbord/timeLine.vue';
-import Gauge from '@/view/dashbord/gauge.vue';
+import Load                    from '@/view/dashbord/index.vue';
+import TimeLine                from '@/view/dashbord/timeLine.vue';
+import Gauge                   from '@/view/dashbord/gauge.vue';
 
 const Router = [{
   path: '/',
@@ -14,15 +14,15 @@ const Router = [{
     name: 'timeLine',
   },
   children: [{
-    path: '/imgs/gauge',
+    path: '/gauge',
     name: 'gauge',
     component: Gauge,
     meta: {
       title: 'Current'
     }
   }, {
-    path: '/si/timeLine',
-    name: 'timeline',
+    path: '/timeLine',
+    name: 'timeLine',
     component: TimeLine,
     meta: {
       title: 'Time Series Data'
