@@ -11,7 +11,7 @@
             <router-view :key="new Date().getTime()"></router-view>
           </el-main>
           <el-footer class="footer">
-            <div>Future technology company - 2020-20200</div>
+            <div>Future technology - Beta -</div>
           </el-footer>
         </el-container>
       </el-container>
