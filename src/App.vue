@@ -6,7 +6,7 @@
           <side-menu ref="menu" :collapse="collapse"></side-menu>
         </el-aside>
         <el-container>
-         
+          
           <el-main>
             <router-view :key="new Date().getTime()"></router-view>
           </el-main>
