@@ -1,6 +1,7 @@
 import Load                    from '@/view/dashbord/index.vue';
 import TimeLine                from '@/view/dashbord/timeLine.vue';
 import Gauge                   from '@/view/dashbord/gauge.vue';
+import Empty                   from '@/view/dashbord/empty.vue';
 
 const Router = [{
   path: '/',
@@ -26,6 +27,13 @@ const Router = [{
     component: TimeLine,
     meta: {
       title: 'Time Series Data'
+    }
+  }, {
+    path: '/empty',
+    name: 'empty',
+    component: Empty,
+    meta: {
+      title: 'Empty'
     }
   }]
 }];
