@@ -1,5 +1,9 @@
 <template>
   <div>
+     <notifications group="custom-style"
+                    position="top center"
+                    classes="n-light" 
+                    :width="400"/>
     <h3>Current Avarage CPU Load</h3>
     <ve-gauge :data="chartData" :settings="chartSettings"></ve-gauge>
   </div>
@@ -28,12 +32,26 @@ import json from './../../data/history.json'
           ]
         }
       }
+    },
+    mounted() {
+      const sseSource = new EventSource('http://localhost:3000/event-stream');
+
+      sseSource.addEventListener('message', (e) => {
+          this.$notify({
+            group: 'custom-style',
+            title: 'Important message',
+            text: e.data
+          });
+      });
+
+      // When finished with the source close the connection
+      // sseSource.close();
     }
   }
 
   function getCurrentCPULoad()
   {
-
+  
     // get latest CPU load information:
     const length = json.length
     const cpuData = json[length-1]
