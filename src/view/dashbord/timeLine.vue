@@ -1,14 +1,26 @@
 <template>
   <div>
     <h3>Average CPU load change over a 10 minute window</h3>
-    <ve-line :data="chartData" :settings="chartSettings"></ve-line>
+    <ve-line
+      :data="chartData"
+      :settings="chartSettings"
+      :toolbox="toolbox">
+    </ve-line>
   </div>
 </template>
 
 <script>
+  import 'echarts/lib/component/toolbox'
   import json from './../../data/history.json'
+
   export default {
     data () {
+      this.toolbox = {
+        feature: {
+          magicType: {type: ['line', 'bar']},
+          saveAsImage: {}
+        }
+      }
       this.chartSettings = {
         xAxisType: 'time',
         area: true,
