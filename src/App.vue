@@ -6,12 +6,14 @@
           <side-menu ref="menu" :collapse="collapse"></side-menu>
         </el-aside>
         <el-container>
-          
+          <el-header>
+            <Header :collapse="collapse" @change="change"></Header>
+          </el-header>
           <el-main>
             <router-view :key="new Date().getTime()"></router-view>
           </el-main>
           <el-footer class="footer">
-            <div>Future technology - Beta -</div>
+            <div> - Dashbord SI - </div>
           </el-footer>
         </el-container>
       </el-container>
@@ -22,14 +24,13 @@
 <script>
 import './style/index.scss';
 import SideMenu from './components/menu';
-// import Header from './components/header.vue';
+import Header from './components/header.vue';
 
 export default {
   name: 'app',
   components: {
-    SideMenu
-    // ,
-    // Header
+    SideMenu,
+    Header
   },
   data() {
     return {
@@ -44,17 +45,3 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-  color: #2c3e50;
-  height: 100%;
-
-  .footer {
-    font-size: 14px;
-  }
-}
-</style>

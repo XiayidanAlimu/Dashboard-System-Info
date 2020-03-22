@@ -6,35 +6,32 @@
 
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">Dashbord</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/imgs' }">IMGS</el-breadcrumb-item>
-        <el-breadcrumb-item>Balloon</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/gauge' }">Gauge</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/empty' }">Empty</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="top-right">
       <div class="block">
         <el-dropdown class="dropdown" trigger="click" @command="handleCommand">
           <span class="el-dropdown-link">
-            <img class="avatar" src="@/assets/github1.jpg" />
+            <img class="avatar" src="@/assets/profile.jpg" />
             <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item command="about">About</el-dropdown-item>
-            <el-dropdown-item command="profile">Profile</el-dropdown-item>
-            <el-dropdown-item command="github">Github</el-dropdown-item>
-            <el-dropdown-item divided command="logout">Log Out</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
     </div>
     <el-dialog
-      title="About"
+      title="Dashbord SI"
       :visible.sync="dialogAbout"
-      class="dialog-about"
       :center="false"
       >
       <div>
         <div>
-          <img src="@/assets/github3.jpg" />
+          <img src="@/assets/echarts.png" width="700px"/>
+          <h5>A Proof-Of-Concept (POC) for a browser-based CPU load monitoring application</h5>
         </div>
         <div></div>
       </div>
@@ -63,12 +60,6 @@ export default {
       if (command === 'about') {
         this.dialogAbout = true;
         // this.$message('click on item ' + command);
-      } else if (command === 'profile') {
-        this.$message('click on item ' + command);
-      } else if (command === 'github') {
-        this.$message('click on item ' + command);
-      } else if (command === 'logout') {
-        this.$message('click on item ' + command);
       }
     }
   }
