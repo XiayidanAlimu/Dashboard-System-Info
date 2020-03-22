@@ -8,7 +8,7 @@ import VeLine             from 'v-charts/lib/line.common'
 import VeMap              from 'v-charts/lib/map.common'
 import VeGauge            from 'v-charts/lib/gauge.common'
 import VeHistogram        from 'v-charts/lib/histogram.common'
-import Notifications      from 'vue-notification'
+import VueNoty            from 'vuejs-noty'
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -16,7 +16,12 @@ Vue.component(VeLine.name, VeLine)
 Vue.component(VeMap.name, VeMap)
 Vue.component(VeGauge.name, VeGauge)
 Vue.component(VeHistogram.name, VeHistogram)
-Vue.use(Notifications)
+Vue.use(VueNoty, {
+  timeout: 4000,
+  progressBar: true,
+  layout: 'bottomRight',
+  theme: 'bootstrap-v3'
+})
 
 Vue.config.productionTip = false
 
