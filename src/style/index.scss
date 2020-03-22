@@ -32,8 +32,6 @@ body {
 }
 
 .el-header, .el-footer {
-  // background-color: #B3C0D1;
-  // background-color: #9dc1f1;
   background-color: #e4e4e4;
   color: #333;
   text-align: center;
@@ -41,7 +39,6 @@ body {
 }
 
 .el-aside {
-  // background-color: #D3DCE6;
   background-color: #545C64;
   color: #333;
   text-align: center;
@@ -50,8 +47,8 @@ body {
 
 .el-main {
   color: #333;
-  // text-align: center;
-  // line-height: 160px;
+  text-align: center;
+  line-height: 160px;
 }
 
 body > .el-container {
@@ -81,18 +78,11 @@ body > .el-container {
     text-align: left;
   }
 }
-// 菜单样式
-// .is-opened .el-submenu__title {
-//   border-bottom: 1px solid #707277;
-// }
-// .el-submenu.is-active .el-submenu__title {
-//   border-bottom-color: #707277;
-// }
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
 }
-
 
 .el-carousel__container {
   height: 600px;
@@ -115,6 +105,19 @@ body > .el-container {
   position: relative;
   color: #666;
   font-size: 14px;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  color: #2c3e50;
+  height: 100%;
+
+  .footer {
+    font-size: 14px;
+  }
 }
 
 @import '~vuejs-noty/dist/vuejs-noty.css';
