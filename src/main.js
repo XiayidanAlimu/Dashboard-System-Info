@@ -17,7 +17,8 @@ Vue.component(VeMap.name, VeMap)
 Vue.component(VeGauge.name, VeGauge)
 Vue.component(VeHistogram.name, VeHistogram)
 Vue.use(VueNoty, {
-  timeout: 4000,
+  killer: true,
+  timeout: 6000,
   progressBar: true,
   layout: 'bottomRight',
   theme: 'bootstrap-v3'
