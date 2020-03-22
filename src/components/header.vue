@@ -7,7 +7,6 @@
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">Dashbord</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ path: '/gauge' }">Gauge</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/empty' }">Empty</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="top-right">

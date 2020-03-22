@@ -38,14 +38,17 @@
   function getData()
   {
     const oData = []
-    json.forEach((data)=>{
-      oData.push({
-        'date': data.time,
-        'Load Average': data.currentload * 0.01 ,
-        'Load User': data.currentload_user * 0.01,
-        'Load System': data.currentload_system * 0.01
+    if(json && json.length)
+    {
+      json.forEach((data)=>{
+        oData.push({
+          'date': data.time,
+          'Load Average': data.loadAverage ,
+          'Load User': data.loadAvgUser,
+          'Load System': data.loadAvgSys
+        })
       })
-    })
+    }
     return oData
   }
 </script>
