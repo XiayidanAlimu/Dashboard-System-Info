@@ -1,6 +1,7 @@
 import Load                    from '@/view/dashbord/index.vue';
 import TimeLine                from '@/view/dashbord/timeLine.vue';
 import Gauge                   from '@/view/dashbord/gauge.vue';
+import Table                   from '@/view/dashbord/table.vue';
 
 const Router = [{
   path: '/',
@@ -26,6 +27,13 @@ const Router = [{
     component: TimeLine,
     meta: {
       title: 'Time Series Data'
+    }
+  }, {
+    path: '/table',
+    name: 'table',
+    component: Table,
+    meta: {
+      title: 'Monitoring History'
     }
   }]
 }];
