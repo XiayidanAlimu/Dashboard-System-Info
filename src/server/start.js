@@ -108,24 +108,34 @@ const monitoringResult = {
 let exceedTimeInfo = {}
 let recoveryTimeInfo = {}
 
-// the real value should be 100%
-const exceedMax = 0.25 // (25%)
+// when CPU Load is larger than 1, we think it might exceed
+const exceedMax = 1
+
+// count the number of times that it has continuously larger than 1
 let counterExceed = 0
+
+// count the number of times that it has continuously smaller than 1, after having exceeded
 let counterRecovery = 0
+
 // if we load every 10,000 miliseconds once a CPU load, in order to monitor 2 minitues
 // continuous exceeding state, we need to increment the counterExceed to 12.
-const totalTimes = 2
+const totalTimes = 12
 
 function monitor(iCPULoadData)
 {
   if(iCPULoadData.loadAverage > exceedMax){
     counterExceed ++
     if(counterExceed === totalTimes){
-      // notify user that CPU load has exceeded
+
+      // ------    EXCEED   --------- 
       exceedTimeInfo.endTime = iCPULoadData.timeUTC
       monitoringResult.exceed.push(exceedTimeInfo)
+
+      // 1. send SSE message to front-end to notify user that CPU load has exceeded
       sendMessage("CPU load average of your computer has exceeded for the " + monitoringResult.exceed.length + "th times, at: "+ iCPULoadData.timeUTC, "exceed")
+      // 2. console log to track real-time information
       console.log("CPU load average of your computer has exceeded for the " + monitoringResult.exceed.length + "th times, at: "+ iCPULoadData.timeUTC);
+      // 3. write json minitoring file to keep a history of it
       const jsonStringData = JSON.stringify(monitoringResult, null, 2)
       fs.writeFile(monitorFilePath, jsonStringData, function (err) {
           if (err) throw err
@@ -154,10 +164,15 @@ function monitor(iCPULoadData)
       recoveryTimeInfo.endTime = iCPULoadData.timeUTC
       if(recoveryTimeInfo.startTime && recoveryTimeInfo.endTime)
       {
+        // ------    RECOVERY   --------- 
         // when CPU load get recover from exceed state for two minutes or longer, notify user that CPU load has been recovered
         monitoringResult.recovery.push(recoveryTimeInfo)
+
+        // 1. send SSE message to front-end to notify user that CPU load has recovered
         sendMessage("CPU load average of your computer has been recovered for the " + monitoringResult.recovery.length + "th times, at: "+ iCPULoadData.timeUTC, "recovery")
+        // 2. console log to track real-time information
         console.log("CPU load average of your computer has been recovered for the " + monitoringResult.recovery.length + "th times, at: "+ iCPULoadData.timeUTC);
+        // 3. write json minitoring file to keep a history of it
         const jsonStringData = JSON.stringify(monitoringResult, null, 2)
         fs.writeFile(monitorFilePath, jsonStringData, function (err) {
             if (err) throw err

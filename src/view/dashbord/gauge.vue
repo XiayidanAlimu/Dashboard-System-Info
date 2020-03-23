@@ -57,7 +57,7 @@ import json from './../../data/history.json'
       })
 
       // When finished with the source close the connection
-      // sseSource.close();
+      sseSource.close();
     }
   }
 
