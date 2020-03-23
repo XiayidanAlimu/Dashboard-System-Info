@@ -2,11 +2,6 @@
   <div>
     <h3>Current Avarage CPU Load</h3>
     <ve-gauge :data="chartData" :settings="chartSettings"></ve-gauge>
-    <ul id="example-1">
-      <li v-for="item in items" v-bind:key="item">
-        {{ item.message }}
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -31,11 +26,7 @@ import json from './../../data/history.json'
           rows: [
             { type: 'percent', value: getCurrentCPULoad() }
           ]
-        },
-        items: [
-          { message: 'Foo' },
-          { message: 'Bar' }
-        ]
+        }
       }
     },
     mounted() {
