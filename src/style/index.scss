@@ -120,4 +120,20 @@ body > .el-container {
   }
 }
 
+.test-container {
+  height: 100%;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  .toolbar {
+    float: left;
+    margin-bottom: 20px;
+  }
+  .pagination {
+    padding: 24px 0px;
+    text-align: right;
+  }
+}
+
 @import '~vuejs-noty/dist/vuejs-noty.css';
