@@ -16,7 +16,7 @@ import json from './../../data/history.json'
         seriesMap: {
           'percent': {
             min: 0,
-            max: 1
+            max: 1.25
           }
         }
       }
